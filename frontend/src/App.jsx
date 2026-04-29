@@ -36,6 +36,7 @@ function App() {
     try {
       await new Promise(resolve => setTimeout(resolve, 800));
       const response = await axios.post('https://cyber-risk-dashboard-64np.onrender.com/api/scan', { url: targetUrl });
+      console.log("Testing Render connection...");
       setLogs(prev => [...prev, "[SUCCESS] Data received via deep link.", "[ANALYSIS] Calculating risk score..."]);
       setResult(response.data);
     } catch (err) {
