@@ -35,7 +35,7 @@ function App() {
 
     try {
       await new Promise(resolve => setTimeout(resolve, 800));
-      const response = await axios.post('http://localhost:5000/api/scan', { url: targetUrl });
+      const response = await axios.post('https://cyber-risk-dashboard-64np.onrender.com/api/scan', { url: targetUrl });
       setLogs(prev => [...prev, "[SUCCESS] Data received via deep link.", "[ANALYSIS] Calculating risk score..."]);
       setResult(response.data);
     } catch (err) {
