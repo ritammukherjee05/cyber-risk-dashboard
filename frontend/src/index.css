@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+@theme {
+  --color-gray-900: #111827; /* HEX instead of oklch */
+  --color-gray-800: #1f2937;
+}
+
+/* Hard override for the root */
+:root {
+  background-color: #111827 !important;
+}
+.hacker-bg {
+  /* This uses a dark, subtle grid/circuit pattern */
+  background-image: 
+    linear-gradient(to bottom, rgba(17, 24, 39, 0.9), rgba(17, 24, 39, 0.9)),
+    url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=2070');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+}
+
+/* Optional: Add a subtle green scan-line effect */
+.hacker-bg::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 255, 0, 0.02) 50%), 
+              linear-gradient(90deg, rgba(255, 0, 0, 0.01), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.01));
+  z-index: 0;
+  background-size: 100% 4px, 3px 100%;
+  pointer-events: none;
+}
+
+/* Ensure your content stays above the background effect */
+.max-w-4xl {
+  position: relative;
+  z-index: 10;
+}

@@ -1,0 +1,19 @@
+# Dependency folders (The most important part!)
+node_modules/
+
+# Environment variables (To keep your secret keys safe)
+.env
+.env.local
+
+# Build folders (Files generated during deployment)
+dist/
+build/
+out/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Debug logs
+npm-debug.log*
+yarn-error.log*
