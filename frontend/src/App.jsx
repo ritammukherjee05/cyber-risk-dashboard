@@ -62,7 +62,7 @@ function App() {
       await new Promise(resolve => setTimeout(resolve, 800));
       setLogs(prev => [...prev, "[INFO] Connection established. Fetching HTTP headers..."]);
 
-      const response = await axios.post('http://localhost:5000/api/scan', { url });
+      const response = await axios.post('https://cyber-risk-dashboard-64np.onrender.com/api/scan', { url });
       
       await new Promise(resolve => setTimeout(resolve, 500));
       setLogs(prev => [...prev, "[SUCCESS] Raw header data received.", "[ANALYSIS] Calculating security risk score..."]);
